@@ -1,6 +1,10 @@
 'use client';
 
+import Link from 'next/link';
 import React from 'react';
+import { GoRepo } from 'react-icons/go';
+import { SiGithub, SiGmail, SiLinkedin } from 'react-icons/si';
+import { SlGlobe } from 'react-icons/sl';
 
 const Header: React.FC = () => {
 	const handleClick = () => {
@@ -13,18 +17,17 @@ const Header: React.FC = () => {
 			<div className="flex items-center">
 				<h1 className="text-white text-2xl font-bold">PassHasher</h1>
 			</div>
-			<div className="flex items-center space-x-4">
-				<div className="relative">
-					<button
-						className="bg-white text-blue-500 px-4 py-2 rounded-lg font-semibold focus:outline-none"
-						onClick={handleClick}
-					>
-						User
-					</button>
-					{/* User Account Menu */}
-					{/* Add your user account menu dropdown content here */}
-				</div>
-				{/* Add more navigation or user-related elements here */}
+			<div className="flex items-center">
+				<Link
+					href="https://github.com/k8pai/password-generator"
+					target="_blank"
+					rel="noopener noreferrer"
+					className="mx-4"
+				>
+					<GoRepo
+						className={`px-3 box-content text-lg transition duration-200 ease-in transform hover:fill-[#e5e5e7]`}
+					/>
+				</Link>
 			</div>
 		</header>
 	);
